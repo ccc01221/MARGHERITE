@@ -1,0 +1,58 @@
+@import "../colors/color";
+@import "../fonts/sizes";
+$total-items: 5;
+.sidebar {
+    position: absolute;
+    right: -200px;
+    top: calc(100% + 13px);
+    width: 200px;
+    text-align: left;
+    background: white;
+    color: black;
+    border-left: 1px solid rgb(199, 198, 198);
+    -webkit-box-shadow: -6px 10px 109px -26px rgba(0, 0, 0, 0.32);
+    -moz-box-shadow: -6px 10px 109px -26px rgba(0, 0, 0, 0.32);
+    box-shadow: -6px 10px 109px -26px rgba(0, 0, 0, 0.32);
+    -webkit-backface-visibility: hidden;
+    li {
+        cursor: pointer;
+        -webkit-transition: 0.3s all ease-in-out;
+        transition: 0.3s all ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        animation: fadeIn 0.2s linear;
+        animation-fill-mode: both;
+        padding: 18px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ededed;
+        color: initial;
+        span {
+            margin-left: $space_base;
+            font-size: $font_base_bigger;
+            transition: 0.2s all ease-in-out;
+            width: 100%;
+        }
+        i {
+            font-size: $font_base_bigger;
+            width: 20px;
+            -webkit-transition: 0.3s all ease-in-out;
+        }
+        &:hover {
+            background-color: #ededed;
+            i {
+                color: $red;
+            }
+        }
+    }
+}
+
+.sidebar {
+    position: fixed;
+    right: 0px;
+    width: 300px;
+    background: white;
+    top: 75px;
+    height: calc(100vh - 75px);
+}

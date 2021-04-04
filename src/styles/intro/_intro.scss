@@ -1,0 +1,468 @@
+@import "../colors/color";
+@import "../fonts/sizes";
+@import "../breakpoints/breakpoints";
+.intro {
+    -webkit-overflow-scrolling: touch;
+    &__background-image {
+        background-image: url("../assets/video/paper-flowers.jpg");
+        /* The image used */
+        height: 100%;
+        /* You must set a specified height */
+        background-position: 10%;
+        /* Center the image */
+        background-repeat: no-repeat;
+        /* Do not repeat the image */
+        background-size: cover;
+        /* Resize the background image to cover the entire container */
+    }
+    &__main {
+        z-index: 10;
+        &-holder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            top: 0;
+            flex-direction: column;
+            right: 0;
+        }
+        &-landscape {
+            z-index: 10;
+            position: relative;
+            transition: .5s all ease-in-out;
+            height: 100vh;
+            overflow: hidden;
+            &-content {
+                width: 64%;
+                box-sizing: border-box;
+                @include breakpoint(for-phone-only) {
+                    width: 100%;
+                }
+                @include breakpoint(for-phone-landscape-only) {
+                    width: 100%;
+                    padding: 0;
+                }
+            }
+            video {
+                @include breakpoint(for-phone-only) {
+                    width: 350%;
+                    margin-left: -1px;
+                }
+                @include breakpoint(for-phone-landscape-only) {
+                    width: 350%;
+                    margin-left: -1px;
+                }
+                @include breakpoint(for-tablet-portrait-up) {
+                    width: 315%;
+                }
+                @include breakpoint(for-tablet-landscape-up) {
+                    width: 150%;
+                }
+                @include breakpoint(for-desktop-up) {
+                    width: 150%;
+                }
+            }
+            &-image {
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                width: calc(30% - 30px);
+                @include breakpoint(for-phone-only) {
+                    margin: auto;
+                    width: 30%;
+                }
+                @include breakpoint(for-phone-landscape-only) {
+                    margin: auto;
+                    width: 20%;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            &-holder {
+                position: relative;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgb(207, 40, 40);
+                background: linear-gradient(90deg, rgba(207, 40, 40, 0.6082143199076505) 0%, rgba(234, 36, 36, 0.8307073171065301) 31%, rgba(241, 36, 36, 0.8370938717283788) 64%, rgba(207, 33, 33, 0.620210425967262) 100%);
+                color: $white;
+                padding: 28px 0;
+                @include breakpoint(for-phone-only) {
+                    text-align: center;
+                    padding: $space_base;
+                }
+                @include breakpoint(for-phone-landscape-only) {
+                    text-align: center;
+                    padding: 0;
+                }
+                h2 {
+                    font-family: "Times", sans-serif;
+                    font-size: 40px;
+                    box-sizing: border-box;
+                    padding-top: 20px;
+                    @include breakpoint(for-phone-only) {
+                        font-size: $font_2;
+                        padding-top: 0;
+                    }
+                    @include breakpoint(for-phone-landscape-only) {
+                        font-size: $font_3;
+                        padding-top: 0;
+                    }
+                }
+                h1 {
+                    font-family: "Bebas Neue Bold", sans-serif;
+                    text-shadow: 5px 0px 20px rgba(255, 255, 255, 0.65);
+                    margin: -10px -50px 0px 10px;
+                    box-sizing: border-box;
+                    padding-top: 6px;
+                    font-size: $font_0;
+                    @include breakpoint(for-phone-only) {
+                        font-size: 40px + $font_base_huge-extra;
+                        padding-top: 0;
+                        margin: 0px 0px 0px 10px;
+                    }
+                    @include breakpoint(for-phone-landscape-only) {
+                        font-size: 35px + $font_base_huge-extra;
+                        padding-top: 0;
+                        margin: 0px 0px 0px 10px;
+                    }
+                }
+                &-footer {
+                    width: 100%;
+                    background: rgb(237, 237, 237);
+                    background: linear-gradient(90deg, rgba(237, 237, 237, 0.65) 0%, rgba(255, 255, 255, 0.85) 31%, rgba(255, 255, 255, 0.85) 61%, rgba(239, 239, 239, 0.65) 100%);
+                    display: flex;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    font-weight: bold;
+                    h2 {
+                        font-family: 'Bebas Neue Bold', sans-serif;
+                        color: $black;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-weight: 900;
+                        height: 110px;
+                        font-size: 51px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        box-sizing: border-box;
+                        @include breakpoint(for-phone-only) {
+                            font-size: $font_2;
+                        }
+                        @include breakpoint(for-phone-landscape-only) {
+                            font-size: $font_2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__arrow {
+        position: absolute;
+        background: $white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        height: 40px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 140px;
+        margin: auto;
+        transition: .5s all ease-in-out;
+        &:hover {
+            transition: .4s all ease-in-out;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(255, 255, 255, 1);
+            i {
+                color: $black;
+            }
+        }
+        i {
+            font-size: 33px;
+            color: $white;
+        }
+    }
+    &__second {
+        transition: .5s all ease-in-out;
+        position: relative;
+        padding-top: 50px;
+        &-holder {
+            box-sizing: border-box;
+            text-transform: uppercase;
+            font-family: "Bebas Neue Bold", sans-serif;
+            padding: 50px 140px;
+            @include breakpoint(for-phone-only) {
+                padding: $space_base;
+                padding-bottom: 25px;
+            }
+            @include breakpoint(for-phone-landscape-only) {
+                padding: 48px 43px;
+                padding-bottom: 32px;
+            }
+            @include breakpoint(for-tablet-portrait-up) {
+                padding: 48px 43px;
+                padding-bottom: 32px;
+            }
+            &-text {
+                margin-bottom: 20px;
+                @include breakpoint(for-phone-only) {
+                    display: none;
+                }
+                @include breakpoint(for-phone-landscape-only) {
+                    display: none;
+                }
+                @include breakpoint(for-tablet-portrait-up) {
+                    display: none;
+                }
+                @include breakpoint(for-tablet-landscape-up) {
+                    display: block;
+                }
+                .black {
+                    font-weight: bolder;
+                    letter-spacing: 1px;
+                    color: $black;
+                    font-size: $font_base_huge-extra;
+                    @include breakpoint(for-desktop-up) {
+                        font-size: $font_base_super-huge-extra;
+                    }
+                    &.small {
+                        font-weight: bolder;
+                        font-size: $font_base_huge;
+                        @include breakpoint(for-desktop-up) {
+                            font-size: 60px;
+                        }
+                    }
+                }
+                .red {
+                    font-weight: bolder;
+                    letter-spacing: 1px;
+                    color: $red;
+                    font-size: $font_base_huge-extra;
+                    @include breakpoint(for-desktop-up) {
+                        font-size: $font_base_super-huge-extra;
+                    }
+                }
+                &-italic {
+                    font-family: "Times", serif;
+                    font-style: italic;
+                    text-transform: none;
+                    color: $black;
+                    font-size: $font_base_medium;
+                    line-height: 1.4;
+                    @include staticBreakpoint(for-phone-only) {
+                        line-height: 1.2;
+                        display: none;
+                    }
+                    @include staticBreakpoint(for-phone-landscape-only) {
+                        line-height: 1.2;
+                        display: none;
+                    }
+                    @include breakpoint(for-tablet-portrait-up) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &-button-holders {
+            padding-top: 25px;
+            @include breakpoint(for-phone-only) {
+                padding-top: 0px;
+            }
+            .red-button {
+                font-family: Arial, sans-serif;
+                color: $white;
+                background-color: $red;
+                border: 2px solid $red;
+                cursor: pointer;
+                transition: .3s all ease-in-out;
+                padding: 17px;
+                margin-right: 20px;
+                font-size: $font_3;
+                border-radius: 6px;
+                display: inline-block;
+                a {
+                    color: $white;
+                }
+                @include breakpoint(for-all-devices) {
+                    padding: 17px;
+                    margin-bottom: $space_base;
+                }
+                &:hover {
+                    color: $red;
+                    background-color: $white;
+                    border: 2px solid $red;
+                    a {
+                        color: $red;
+                    }
+                }
+            }
+            .red-text-button {
+                font-family: Arial, sans-serif;
+                color: $red;
+                border: 2px solid $red;
+                box-sizing: border-box;
+                background-color: $white;
+                display: inline-block;
+                cursor: pointer;
+                transition: .3s all ease-in-out;
+                padding: 17px;
+                font-size: $font_3;
+                border-radius: 6px;
+                display: inline-block;
+                @include breakpoint(for-all-devices) {
+                    padding: 17px;
+                }
+                &:hover {
+                    color: $white;
+                    background-color: $red;
+                    border: 2px solid $red;
+                }
+            }
+        }
+    }
+}
+
+//.moveDown{
+//  transform: translateY(-150%);
+//}
+//.moveUp{
+//  transform: translateY(-100%);
+//}
+.mobileOnly {
+    margin-right: 20px;
+    i {
+        font-size: 25px;
+    }
+}
+
+.landscape-holder {
+    display: flex;
+    align-items: center;
+    margin-left: 75px;
+    @include breakpoint(for-phone-only) {
+        flex-wrap: wrap;
+        margin-left: 0px;
+    }
+    @include breakpoint(for-phone-landscape-only) {
+        flex-wrap: wrap;
+        margin-left: 0px;
+    }
+    @include breakpoint(for-tablet-portrait-up) {
+        margin-left: 35px;
+    }
+}
+
+.onlyDesktop {
+    display: block;
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+}
+
+.onlyMobile {
+    display: none;
+    @media screen and (max-width: 1200px) {
+        display: block;
+        line-height: 1.3;
+        letter-spacing: 3px !important;
+    }
+}
+
+.onlyDesktopArrow {
+    display: flex;
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+}
+
+.onlyMobileArrow {
+    display: none;
+    @media screen and (max-width: 1200px) {
+        display: flex;
+    }
+    @include breakpoint(for-phone-only) {
+        display: none;
+    }
+    @include breakpoint(for-phone-landscape-only) {
+        display: none;
+    }
+    @include breakpoint(for-tablet-portrait-up) {
+        display: none;
+    }
+    @include breakpoint(for-tablet-landscape-up) {
+        display: none;
+    }
+}
+
+.smallMobile {
+    display: none;
+    @include breakpoint(for-phone-only) {
+        display: block;
+        line-height: 1.2;
+        margin-bottom: $space_base_bigger;
+    }
+    @include breakpoint(for-phone-landscape-only) {
+        display: block;
+        line-height: 1.4;
+    }
+    @include breakpoint(for-tablet-portrait-up) {
+        display: block;
+    }
+    @include breakpoint(for-tablet-landscape-up) {
+        display: none;
+    }
+}
+
+_:-ms-fullscreen,
+ :root .intro__main-landscape-holder {
+    padding-bottom: 0px;
+    padding-top: 20px;
+    height: 250px;
+}
+
+#overbox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    height: 70px;
+    background-color: $black;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    @include breakpoint(for-phone-only) {
+        font-size: 14px;
+    }
+    @include breakpoint(for-tablet-portrait-up) {
+        font-size: 18px;
+    }
+    .gotIt {
+        margin-left: 50px;
+        background: $red;
+        padding: 10px 20px;
+        cursor: pointer;
+        @include breakpoint(for-phone-only) {
+            margin-left: 50px;
+            background: $red;
+            padding: 10px 10px;
+            width: 105px;
+            text-align: center;
+        }
+    }
+}

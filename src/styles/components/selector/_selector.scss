@@ -1,0 +1,54 @@
+@import "../../colors/color";
+@import "../../fonts/sizes";
+@import "../../breakpoints/breakpoints";
+.selector {
+    overflow: hidden;
+    &-holder {
+        margin: 0;
+        padding: 0;
+        >div {
+            margin-bottom: $space_base;
+            label {
+                padding-left: $space_base_bigger;
+                font-size: $font_base_bigger;
+            }
+            &:last-child {
+                margin-bottom: 10px;
+            }
+        }
+        max-height: 220px;
+        width: 100%;
+        margin-top: $space_base;
+        height:auto;
+        overflow: auto;
+    }
+    &-search {
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        border: 1px solid $gray;
+        width: calc(100% - 0px);
+        margin-left: 0;
+        box-sizing: border-box;
+        input {
+            outline: none;
+            padding: $space_input;
+            border: 0;
+            width: calc(100% - 60px);
+            font-size: $font_base_bigger;
+        }
+        .searchbutton {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            position: relative;
+            right: 0;
+            color: $darkgray;
+            padding: 0px;
+            justify-content: center;
+            align-items: center;
+            font-size: $font_base_medium;
+        }
+    }
+}

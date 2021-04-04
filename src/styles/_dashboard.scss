@@ -1,0 +1,8 @@
+@import "dashboard/student";
+
+.dashboard{
+  padding-top: 75px;
+  @include staticBreakpoint(for-phone-only){
+    padding-top: 60px;
+  }
+}

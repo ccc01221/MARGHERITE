@@ -1,0 +1,27 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+
+  # Serve all static files with urls ending with a file extension
+- url: /(.*\..+)$ 
+  static_files: dist/\1
+  upload: dist/(.*\..+)$
+  # catch all handler to index.html
+- url: /.*
+  static_files: dist/index.html
+  upload: dist/index.html
+  secure: always
+
+skip_files:
+# default
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+# end of default
+- ^node_modules$
+- ^(.*/)?\.vue$
+- ^(.*/)?\.py$

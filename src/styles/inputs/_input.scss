@@ -1,0 +1,126 @@
+@import '../colors/color';
+@import "../fonts/sizes";
+@import "../breakpoints/breakpoints";
+.form-group{
+  position: relative;
+  margin-bottom: 24px;
+  &.flex{
+    display: flex;
+    .content:first-child{
+      width: 100px;
+    }
+    .content:last-child{
+      width: 100%;
+    }
+  }
+  .message{
+    position: relative;
+    bottom: -10px;
+    color: $red;
+    font-size: $font_6;
+  }
+  &.error{
+    input{
+      border-color: $red;
+    }
+  }
+  input{
+    padding: 9px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    outline: none;
+    transition: .3s all ease-in-out;
+    border: 1px solid $gray;
+    font-family: Arial,sans-serif;
+    line-height: 1.4;
+    -webkit-appearance: none;
+    border-radius: 0;
+    font-size: $font_base;
+  }
+  .showPassword{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: Arial,sans-serif;
+    font-size: $font_base;
+  }
+}
+input{
+  &[type="checkbox"]:checked,
+  &[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+  &[type="checkbox"]:checked + label,
+  &[type="checkbox"]:not(:checked) + label
+  {
+    position: relative;
+    padding-left: 32px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+    font-size: $font_base;
+  }
+  &[type="checkbox"]:checked + label:before,
+  &[type="checkbox"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $gray;
+    background: #fff;
+  }
+  &[type="checkbox"]:checked + label:after,
+  &[type="checkbox"]:not(:checked) + label:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: $red;;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  &[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  &[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.intro-group{
+  width: 40%;
+  margin-top: $space_base;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  top: -1px;
+  
+  @include breakpoint(for-all-devices){
+    display: block;
+    margin-left: 0;
+    width: 60%;
+    
+  }
+  input{
+    border: 2px solid $red;
+    padding: 17px;
+    box-sizing: border-box;
+    border-radius: 0px;
+    font-size: $font_base_bigger;
+  }
+}

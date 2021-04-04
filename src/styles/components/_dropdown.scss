@@ -1,0 +1,61 @@
+$total-items: 3;
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 13px);
+  width: 200px;
+  text-align: right;
+  background: white;
+  color: black;
+  li{
+    cursor: pointer;
+    -webkit-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeIn 0.2s linear;
+    animation-fill-mode: both;
+    padding: 18px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ededed;
+    span{
+      margin-left: $space_base;
+      font-size: $font_base;
+      transition: .2s all ease-in-out;
+    }
+    i{
+      font-size: $font_base_bigger;
+      width: 20px;
+      -webkit-transition: .3s all ease-in-out;
+    }
+    &:hover{
+      background-color: #ededed;
+      i{
+        color: $red;
+      }
+    }
+  }
+  // Set delay per List Item
+  @for $i from 1 through $total-items {
+    li:nth-child(#{$i}) {
+      animation-delay: .15s * $i;
+    }
+  }
+
+  // Keyframe animation
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+      top: 100px;
+    }
+    75% {
+      opacity: 0.5;
+      top: 0px;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

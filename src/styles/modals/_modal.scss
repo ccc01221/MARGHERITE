@@ -1,0 +1,270 @@
+@import "../colors/color";
+@import "../fonts/sizes";
+@import "../breakpoints/breakpoints";
+.modal {
+    font-family: Arial, sans-serif, 'Font Awesome 5 Pro';
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 20;
+    label {
+        font-size: $font_base;
+    }
+    h1 {
+        color: $black;
+    }
+    &__mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: all;
+        @include breakpoint(for-phone-only) {
+            bottom: -200px;
+        }
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 3!important;
+    }
+    .modalinner {
+        z-index: 10!important;
+    }
+    &__holder {
+        pointer-events: auto;
+        -webkit-box-shadow: 17px 17px 73px -10px rgba(0, 0, 0, 0.52);
+        -moz-box-shadow: 17px 17px 73px -10px rgba(0, 0, 0, 0.52);
+        box-shadow: 17px 17px 73px -10px rgba(0, 0, 0, 0.52);
+        margin-bottom: 100px;
+        z-index: 25!important;
+        &-first {
+            border: 1px solid $gray;
+            background-color: $white;
+            border-radius: 7px;
+            width: 450px;
+            box-sizing: border-box;
+            position: relative;
+            border-radius: 5px;
+            padding: 28px;
+            @include breakpoint(for-phone-only) {
+                width: 368px;
+                margin: 0 auto;
+                margin-bottom: 30px;
+            }
+            @include breakpoint(for-phone-landscape-only) {
+                overflow-y: hidden;
+            }
+            i {
+                position: absolute;
+                cursor: pointer;
+                top: 20px;
+                right: 20px;
+                color: $black;
+                font-size: $font_2;
+                @include breakpoint(for-phone-only) {
+                    font-size: $font_2;
+                }
+                @include breakpoint(for-phone-landscape-only) {
+                    font-size: $font_2;
+                }
+            }
+        }
+        &-sign {
+            border: 1px solid $gray;
+            background-color: $white;
+            margin-top: 15px;
+            width: 450px;
+            box-sizing: border-box;
+            padding: 22px 32px;
+            padding-top: 20px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 5px;
+            font-size: $font_base;
+            @include breakpoint(for-phone-only) {
+                width: 368px;
+                margin: 0 auto;
+            }
+            a,
+            span:last-child {
+                color: $blue;
+                cursor: pointer;
+            }
+        }
+        &-tabs {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-bottom: 1px solid $gray;
+            font-size: $font_5;
+            @include breakpoint(for-phone-only) {
+                margin-bottom: 10px;
+                padding-bottom: 20px;
+            }
+            @include breakpoint(for-phone-landscape-only) {
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+            }
+            @include breakpoint(for-desktop-up) {
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+            }
+            padding-bottom: 15px;
+            span {
+                font-family: Arial, sans-serif;
+                position: relative;
+                cursor: pointer;
+                &:after {
+                    position: absolute;
+                    bottom: -25px;
+                    left: 51%;
+                    right: 50%;
+                    height: 3px;
+                    background-color: $red;
+                    content: '';
+                    display: block;
+                    transition: .3s all ease-in-out;
+                    bottom: - 17px;
+                    @include breakpoint(for-phone-only) {
+                        bottom: -20px;
+                    }
+                    @include breakpoint(for-phone-landscape-only) {
+                        bottom: -10px;
+                    }
+                    @include breakpoint(for-desktop-up) {
+                        bottom: -20px;
+                    }
+                }
+                &.activeTab {
+                    &:after {
+                        left: 10%;
+                        right: 10%;
+                    }
+                }
+            }
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 0;
+            padding-bottom: 24px;
+            border-bottom: 1px solid $gray;
+            font-size: $font_3;
+        }
+        &-content {
+            &-footer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: $font_base;
+                @include breakpoint(for-phone-only) {
+                    flex-wrap: wrap;
+                    line-height: 1.4;
+                }
+                @include breakpoint(for-phone-landscape-only) {
+                    flex-wrap: wrap;
+                    line-height: 1.4;
+                }
+                @include breakpoint(for-desktop-up) {
+                    flex-wrap: wrap;
+                    line-height: 1.4;
+                }
+                span {
+                    line-height: 1.5;
+                    font-size: $font_base;
+                }
+                input {
+                    margin-right: 10px;
+                }
+                >div:first-child {
+                    @include breakpoint(for-phone-only) {
+                        width: 100%;
+                    }
+                }
+                >span:last-child {
+                    color: $blue;
+                    cursor: pointer;
+                    font-size: $font_base;
+                    @include breakpoint(for-phone-only) {
+                        margin-top: 10px;
+                    }
+                    @include breakpoint(for-phone-landscape-only) {
+                        margin-top: 10px;
+                        width: 100%;
+                    }
+                }
+                a {
+                    color: $blue;
+                }
+            }
+        }
+        button {
+            display: block;
+            border: 0;
+            width: 100%;
+            background: $red;
+            color: white;
+            padding: 16px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            transition: .3s all ease-in-out;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            font-size: $font_base;
+            margin-top: 32px;
+            &:disabled {
+                opacity: .5;
+            }
+        }
+    }
+}
+
+.vti__input {
+    font-family: Arial, sans-serif, 'Font Awesome 5 Pro' !important;
+    font-weight: 800;
+}
+
+.verification-holder {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    height: 45px;
+    bottom: initial;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: $blue;
+    button {
+        cursor: pointer;
+        font-size: 14px;
+        color: $blue;
+        background-color: transparent;
+        padding: 0;
+        text-transform: none;
+        margin: 0;
+        outline: none;
+        border-radius: 6px;
+        width: initial;
+    }
+}
+
+.forgot-info {
+    padding: 0 10px;
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.relative {
+    position: relative;
+}

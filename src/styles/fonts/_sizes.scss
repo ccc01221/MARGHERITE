@@ -1,0 +1,28 @@
+$font_0: 130px;
+$font_1: 50px;
+$font_2: 30px;
+$font_3: 22px;
+$font_4: 18px;
+$font_5: 16px;
+$font_6: 14px;
+// Container Size
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// Fixed Font Sizes
+$font_base: 16px;
+$font_base_bigger: 20px;
+$font_base_medium: 23px;
+$font_base_title: 26px;
+$font_base_large: 32px;
+$font_base_huge: 39px;
+$font_base_huge-extra: 50px;
+$font_base_super-huge-extra: 70px;
+// Fixed spacing
+$space_input: 10px;
+$space_base: 20px;
+$space_base_big: 30px;
+$space_base_bigger: 40px;

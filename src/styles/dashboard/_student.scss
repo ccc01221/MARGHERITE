@@ -1,0 +1,367 @@
+@import "../colors/color";
+@import "../breakpoints/breakpoints";
+@import "../fonts/sizes";
+.dashboard__student {
+    &-title {
+        text-align: center;
+        position: relative;
+        &:before {
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            height: 1px;
+            background-color: $darkgray;
+            content: '';
+            left: 0;
+            right: 0;
+        }
+        h2 {
+            background-color: #FAFAFA;
+            width: 300px;
+            font-size: $font_base_title;
+            margin: 0 auto;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    &-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: $space_base_bigger;
+        @include staticBreakpoint(for-tablet-portrait-only) {
+            padding: 0 20px;
+        }
+        @include staticBreakpoint(for-tablet-portrait-only) {
+            flex-wrap: wrap;
+        }
+        >div {
+            background-color: white;
+            padding: $space_base;
+            box-sizing: border-box;
+            border-radius: 10px;
+            -webkit-box-shadow: 10px 2px 68px -8px rgba(0, 0, 0, 0);
+            box-shadow: 10px 2px 68px -8px rgba(0, 0, 0, 0);
+            border: 1px solid #ededed;
+            height: 142px;
+            @include staticBreakpoint(for-tablet-portrait-only) {
+                margin-bottom: $space_base;
+            }
+            &:first-child {
+                width: calc(33% - 10px);
+                @include staticBreakpoint(for-tablet-portrait-only) {
+                    width: 100%;
+                }
+            }
+            &:nth-child(2) {
+                width: calc(39.99% - 10px);
+                @include staticBreakpoint(for-tablet-portrait-only) {
+                    width: 100%;
+                }
+            }
+            &:last-child {
+                width: calc(27% - 10px);
+                @include staticBreakpoint(for-tablet-portrait-only) {
+                    width: 100%;
+                }
+            }
+        }
+        &-personal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include staticBreakpoint(for-tablet-portrait-only) {
+                justify-content: flex-start;
+            }
+            &-image {
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30%;
+                @include staticBreakpoint(for-tablet-portrait-only) {
+                    width: 100px;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            &-data {
+                width: 70%;
+                padding-left: $space_base;
+                h3 {
+                    font-size: $font_base_title;
+                    margin-bottom: 15px;
+                }
+                span {
+                    color: $darkgray;
+                    display: inline-block;
+                    margin-bottom: 15px;
+                    font-size: $font_base;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    >span {
+                        display: inline-block;
+                        color: $blue;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        &-package {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            &-item {
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 0;
+                text-align: center;
+                margin-top: -7px;
+                span:first-child {
+                    font-size: $font_base_super-huge-extra;
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                span:last-child {
+                    color: $darkgray;
+                    font-size: $font_base;
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+        &-credit {
+            span {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+            span:first-child {
+                color: $darkgray;
+                font-family: $font_base;
+                margin-bottom: $space_base;
+            }
+            span:nth-child(2) {
+                font-size: $font_base_title;
+                color: $black;
+                font-weight: bold;
+                margin-bottom: $space_base;
+            }
+            span:last-child {
+                color: $blue;
+                font-family: $font_base;
+            }
+        }
+    }
+    &-activePackage {
+        margin-top: $space_base_bigger;
+        @include staticBreakpoint(for-tablet-portrait-only) {
+            padding: 0 20px;
+        }
+        h2 {
+            font-size: $font_base_title;
+            font-weight: normal;
+        }
+        &-holder {
+            display: flex;
+            align-items: center;
+            background-color: $white;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 10px $space_base;
+            margin-top: $space_base;
+            -webkit-box-shadow: 10px 2px 68px -8px rgba(0, 0, 0, 0);
+            box-shadow: 10px 2px 68px -8px rgba(0, 0, 0, 0);
+            border: 1px solid #ededed;
+            margin-bottom: $space_base_bigger;
+            @include staticBreakpoint(for-tablet-portrait-only) {
+                flex-wrap: wrap;
+            }
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                content: '';
+                display: block;
+                background-color: $blue;
+                width: 10px;
+            }
+            >div {
+                width: 33.333%;
+                box-sizing: border-box;
+                position: relative;
+                height: 75px;
+                display: flex;
+                align-items: center;
+                @include staticBreakpoint(for-tablet-portrait-only) {
+                    width: 100%;
+                    height: 80px;
+                    padding: 15px 0;
+                    border-bottom: 1px solid $darkgray;
+                    &:first-child {
+                        padding-top: 0;
+                    }
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                }
+                &:last-child {
+                    @include staticBreakpoint(for-tablet-portrait-only) {
+                        border-bottom: none;
+                    }
+                    &:after {
+                        display: none;
+                    }
+                }
+                &:after {
+                    position: absolute;
+                    display: block;
+                    top: 10px;
+                    bottom: 10px;
+                    right: 0;
+                    width: 1px;
+                    background-color: $darkgray;
+                    content: '';
+                    @include staticBreakpoint(for-tablet-portrait-only) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &-item {
+            &-image {
+                width: 20%;
+                @include staticBreakpoint(for-tablet-portrait-only) {
+                    width: 60px;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            &-text {
+                width: 80%;
+                padding-left: $space_base;
+                h4 {
+                    font-size: $font_base_bigger;
+                    margin-bottom: 10px;
+                }
+                span {
+                    color: $darkgray;
+                    font-size: $font_base;
+                }
+            }
+        }
+    }
+    &-books{
+        &-holder{
+            margin-top: $space_base_bigger;
+        }
+    }
+    &-myTeachers {
+        @include staticBreakpoint(for-tablet-portrait-only) {
+            padding: 0 20px;
+        }
+        &-holder {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: $space_base_bigger;
+        }
+        &-item {
+            width: calc(50% - 10px);
+            margin-right: $space_base;
+            background-color: $white;
+            padding: $space_base;
+            box-sizing: border-box;
+            display: flex;
+            -webkit-box-shadow: 10px 2px 68px -8px rgba(0, 0, 0, 0);
+            box-shadow: 10px 2px 68px -8px rgba(0, 0, 0, 0);
+            border: 1px solid #ededed;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: $space_base;
+            @include staticBreakpoint(for-phone-only) {
+                width: 100%;
+                margin-right: 0;
+            }
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+            &-image {
+                width: 14%;
+                @include staticBreakpoint(for-phone-only) {
+                    width: 60px;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            &-calendar {
+                position: absolute;
+                right: $space_base;
+                top: 0;
+                bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                i {
+                    font-size: $font_base_large;
+                    color: $red;
+                }
+            }
+            &-text {
+                width: 86%;
+                padding-left: $space_base;
+                display: flex;
+                align-items: center;
+                h4 {
+                    font-size: $font_base_title;
+                    margin-bottom: 10px;
+                    display: flex;
+                    align-items: center;
+                    @include staticBreakpoint(for-phone-only) {
+                        font-size: $font_base_bigger;
+                        margin-bottom: 5px;
+                    }
+                    span {
+                        margin-left: 0px;
+                        @include staticBreakpoint(for-phone-only) {
+                            width: 50px;
+                        }
+                    }
+                }
+                span {
+                    color: $darkgray;
+                    font-size: $font-base;
+                }
+            }
+        }
+        &-button {
+            width: 85px;
+            display: block;
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 20px auto;
+            transition: .3s all ease-in-out;
+            cursor: pointer;
+            &:hover {
+                background-color: #ededed;
+                color: $red;
+                border: 1px solid $red;
+            }
+        }
+    }
+    &-myBooks {
+        margin-top: 50px;
+    }
+}

@@ -1,0 +1,82 @@
+@import "../../colors/color";
+@import "../../fonts/sizes";
+@import "../../breakpoints/breakpoints";
+.dropdown {
+    margin-left: 15px;
+    margin-bottom: -15px;
+    width: 87%;
+    display: flex;
+    text-align: left;
+    display: flex;
+    flex: 1;
+    input {
+        flex: 1;
+        height: 50px;
+        font-size: $font_base_medium;
+    }
+    .searchbutton {
+        display: flex;
+        position: relative;
+        width: 60px;
+        color: $black;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        background-color: #f9e668;
+        border: $white 1px;
+        cursor: pointer;
+        font-size: $font_base_medium;
+        &:hover {
+            background-color: $black;
+            color: $white;
+        }
+    }
+    @include breakpoint(for-phone-only) {
+        width: 64%;
+        input {
+            height: 50px;
+            font-size: $font_base_bigger;
+        }
+        margin-top: 17px;
+        margin-right:auto;
+        margin-left: auto;
+        padding-bottom: 15px;
+    }
+    @include breakpoint(for-phone-landscape-only) {
+        width: 60%;
+        input {
+            height: 50px;
+        }
+        margin-top: 20px;
+        margin-right:auto;
+        margin-left: auto;
+        padding-bottom: 15px;
+    }
+    .dropdown-content {
+        position: absolute;
+        background-color: #fff;
+        min-width: 248px;
+        max-width: 248px;
+        max-height: 248px;
+        border: 1px solid #e7ecf5;
+        box-shadow: 0px 8px 34px 0px rgba(0, 0, 0, 0.25);
+        overflow: auto;
+        margin-top: 50px;
+        z-index: 1;
+        .dropdown-item {
+            color: black;
+            font-size: $font_base_bigger;
+            line-height: 1.0;
+            padding: 12px;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            &:hover {
+                background-color: #f9e668;
+            }
+        }
+    }
+    .dropdown:hover .dropdowncontent {
+        display: block;
+    }
+}
